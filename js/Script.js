@@ -4,7 +4,7 @@ const divResultado = document.querySelector('#resultado');
 formDados.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const formData = new FormData(formDados);
+
 
      // Pegando os valores 
      let des = document.getElementById("des").value;
@@ -16,17 +16,20 @@ formDados.addEventListener('submit', (e) => {
   let are = com * lar
   let valorm = are * 550
 
-  if (valorm <= 20.000) {
-    divResultado.innerHTML = `Isento ${valorm.toFixed(2)})`;
-} else if (valorm >= 20.000 && valorm < 100.000) {
-    divResultado.innerHTML = `Valor Adicional é de 5%${toFixed(2)})`;
-} else if (valorm >= 100.000 && valorm < 500.000) {
-    divResultado.innerHTML = `Valor Adicional é de 10% ${toFixed(2)})`;
-} else if (valorm >= 500.00 && valorm <= 1000.000) {
-    divResultado.innerHTML = `Valor Adicional é de 15% ${toFixed(2)})`;
-} else if (valorm > 1000.000) {
-    divResultado.innerHTML = `Valor Adicional é de 20%  ${toFixed(2)})`;
+  if (valorm >=100.0000) {
+    divResultado.innerHTML = `Valor Adicional é de 20%`;
+} else if (valorm <= 20.000) {
+    divResultado.innerHTML = `Valor Adicional é de 5%`;
+} else if (valorm >= 100.0000 && valorm < 500.000) {
+    divResultado.innerHTML = `Valor Adicional é de 10% `;
+} else if (valorm >= 500.00 && valorm <= 1000.0000) {
+    divResultado.innerHTML = `Valor Adicional é de 15% `;
+} else {
+    divResultado.innerHTML = `Isento`
 }
+
+let item = document.createElement("div");
+        item.className = "item";
 
 item.innerHTML = `
             <p><b>Descrição do lote:</b> ${des}</p>
@@ -34,7 +37,8 @@ item.innerHTML = `
             <p><b>Largura:</b> ${lar}</p>
             <p><b>Área (m2):</b> ${are}</p>
             <p><b>Valor do lote :</b> R$ ${valorm.toFixed(2)}</p>
-       `
+       `;
+
        resultado.appendChild(item);
        form.reset();
 })
