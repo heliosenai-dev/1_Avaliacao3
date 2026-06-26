@@ -1,15 +1,16 @@
 const formDados = document.querySelector('#formulario');
 const divResultado = document.querySelector('#resultado');
 
-formDados.addEventListener('submit', (evt) => {
-    evt.preventDefault();
+formDados.addEventListener('submit', (e) => {
+    e.preventDefault();
 
     const formData = new FormData(formDados);
 
      // Pegando os valores 
-     let des = formData.get('des'); 
-     let com = parseFloat(formData.get('com'));
-     let lar = parseFloat(formData.get('lar'));
+     let des = document.getElementById("des").value;
+     let com = document.getElementById("com").value;
+     let lar = document.getElementById("lar").value;
+     
 
   // Cálculo 
   let are = com * lar
@@ -23,7 +24,7 @@ formDados.addEventListener('submit', (evt) => {
     divResultado.innerHTML = `Valor Adicional é de 10% ${toFixed(2)})`;
 } else if (valorm >= 500.00 && valorm <= 1000.000) {
     divResultado.innerHTML = `Valor Adicional é de 15% ${toFixed(2)})`;
-} else {valorm > 1000.000
+} else if (valorm > 1000.000) {
     divResultado.innerHTML = `Valor Adicional é de 20%  ${toFixed(2)})`;
 }
 
@@ -34,5 +35,6 @@ item.innerHTML = `
             <p><b>Área (m2):</b> ${are}</p>
             <p><b>Valor do lote :</b> R$ ${valorm.toFixed(2)}</p>
        `
-       
+       resultado.appendChild(item);
+       form.reset();
 })

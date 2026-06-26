@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avaliação 03 - Lotes</title>
-    <script src="js/Script.js"defer></script>
+    <script type="module" src="js/Script.js" defer></script>
 </head>
 <body>
  <div id="geral">
@@ -12,22 +12,20 @@
         <h2> Algoritmo</h2>
 
         <form id="formulario">
-            <label for="com"> Informe qual é o Comprimento </label>
-            <input type="text" name="com" id="com">
-    
-            <label for="lar"> Qual é a largura </label>
-            <input type="text" name="lar" id="lar">
-    
-            <label for="des"> Informe a Descrição </label>
-            <input type="text" name="des" id="des">
-          
-    
-            <button type="submit"> Calcular </button>
-            <button type="reset"> Limpar </button>
+            <label for="des">Insira a Descrição</label>
+            <input type="text" id="des" placeholder="Descrição" required>
 
+            <label for="com">Qual é o comprimento</label>
+            <input type="text" id="com" placeholder="Comprimento" required>
+
+
+            <label for="lar">Informe a Largura </label>
+            <input type="text" id="lar" placeholder="largura" required>
+            
+            <button type="submit">Adicionar</button>
             </form>
             <div id = "resultado">
-                
+
             </div>
 </body>
 </html>
