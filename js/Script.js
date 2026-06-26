@@ -12,4 +12,6 @@ formDados.addEventListener('submit', (evt) => {
      let lar = parseFloat(formData.get('lar'));
 
   // Cálculo 
-  let cal = peso / (alt * alt);
+  let are = com * lar
+  let valorm = are * 550
+})
