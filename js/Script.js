@@ -40,7 +40,7 @@ formDados.addEventListener('submit', (e) => {
     item.className = "item";
 
     let valorTotal = valorm + ad;
-
+// Impressão
     item.innerHTML = `
         <p><b>Descrição do lote:</b> ${des}</p>
         <p><b>Comprimento:</b> ${com} m</p>
